@@ -34,7 +34,7 @@ npm run preview
 
 ## Publikacja
 
-Projekt jest przygotowany pod **GitHub Pages** i publikuje się przez GitHub Actions. Workflow `.github/workflows/pages.yml` uruchamia test symulacyjny, buduje statyczną stronę i publikuje ją po zmianach na `main` lub na aktywnej gałęzi roboczej.
+Projekt jest przygotowany pod **GitHub Pages** i publikuje się przez GitHub Actions. Workflow `.github/workflows/pages.yml` uruchamia test symulacyjny przy pull requeście, a po scaleniu na `main` buduje i publikuje statyczną stronę.
 
 Po zakończeniu wdrożenia gra jest dostępna pod adresem:
 
