@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: #7cc8ff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Baloo 2", "Fredoka", "Trebuchet MS", system-ui, sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(12px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.04) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes toast-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(3px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hint-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+.anim-pop {
+  animation: pop-in 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+.anim-toast {
+  animation: toast-in 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+.anim-hint {
+  animation: hint-in 0.25s ease-out both;
+}
+.anim-float {
+  animation: floaty 3s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: soft-pulse 1.6s ease-in-out infinite;
+}
+
+button:focus-visible {
+  outline: 3px solid #245aa3;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-pop,
+  .anim-toast,
+  .anim-hint,
+  .anim-float,
+  .anim-pulse {
+    animation: none;
+  }
+}
